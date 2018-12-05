@@ -9,7 +9,12 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-    queries.readAllStudentById(req.params.id).then(student => res.status(200).send({student}))
+    queries.readStudentById(req.params.id).then(student => res.status(200).send({student}))
 })
+
+router.post('/:id', (req, res) => {
+    queries.readStudentById(req.params.id).then(student => res.status(200).send({student}))
+})
+
 
 module.exports = router
